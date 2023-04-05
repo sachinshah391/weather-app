@@ -8,7 +8,7 @@ import TimeAndLocation from './components/TimeAndLocation';
 import TemperatureAndDetails from './components/TemperatureAndDetails';
 import Forecast from './components/Forecast';
 import getWeatherData from './services/weatherService';
-import getFormattedWeatherData from './services/weatherService';
+import {getFormattedWeatherData} from './services/weatherService';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -62,8 +62,8 @@ function App() {
 
 
   return (
-    <div className="App">
-      <div className={`mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br ${formatBackground()} h-fit shadwo-x1 shadow-gray-400`}>
+    <div className="flex">
+      <div className={`mx-auto mt-60 rounded-lg max-w-screen-xl py-5 px-20 bg-gradient-to-br ${formatBackground()} h-fit shadwo-x1 shadow-gray-400`}>
         <TopButtons setquery={setquery} />
         <Inputs setquery={setquery} units={units} setUnits={setUnits} />
         {weather &&
