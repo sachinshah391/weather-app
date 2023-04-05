@@ -1,0 +1,46 @@
+cdb000bc9cceff84bc1cc659bf32fee1
+
+
+
+// Retrieve params via url.search, passed into ctor
+const url = new URL("https://example.com?foo=1&bar=2");
+const params1 = new URLSearchParams(url.search);
+console.log('url.search value-',url.search)
+console.log('params1 value-',params1);
+
+
+
+// Get the URLSearchParams object directly from a URL object
+const params1a = url.searchParams;
+console.log('params1a value-',params1a);
+
+// Pass in a string literal
+const params2 = new URLSearchParams("foo=1&bar=2");
+console.log('params2 value-',params1a);
+
+const params2a = new URLSearchParams("?foo=1&bar=2");
+console.log('params2a value-',params1a);
+
+// Pass in a sequence of pairs
+const params3 = new URLSearchParams([
+  ["foo", "1"],
+  ["bar", "2"],
+]);
+console.log('params3 value-',params1a);
+
+// Pass in a record
+const params4 = new URLSearchParams({ foo: "1", bar: "2" });
+console.log('params4 value-',params1a);
+
+
+
+
+//output
+
+url.search value- ?foo=1&bar=2
+params1 value- URLSearchParams { 'foo' => '1', 'bar' => '2' }
+params1a value- URLSearchParams { 'foo' => '1', 'bar' => '2' }
+params2 value- URLSearchParams { 'foo' => '1', 'bar' => '2' }
+params2a value- URLSearchParams { 'foo' => '1', 'bar' => '2' }
+params3 value- URLSearchParams { 'foo' => '1', 'bar' => '2' }
+params4 value- URLSearchParams { 'foo' => '1', 'bar' => '2' }
