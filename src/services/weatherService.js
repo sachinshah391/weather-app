@@ -62,14 +62,14 @@ export const getFormattedWeatherData = async (searchParams) => {
 
     //const { lat, lon } = formatCurrentWeather;
     //const formattedForecastWeather = await getWeatherData('onecall', { lat, lon, exclude: "current,minutely,alerts", units: searchParams.units }).then(formatForecastWeather)
-    
+
     return formattedCurrentWeather;
     //return {...formattedCurrentWeather, ...formattedForecastWeather};
 }
 
 
-export const formatToLocalTime= (secs, zone, format="cccc, dd LLL yyyy' | Local time: 'hh:mm a")=> DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
-export const iconUrlFromCode = (code)=>`http://openweathermap.org/img/wn/${code}@2x.png`
+export const formatToLocalTime = (secs, zone, format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a") => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
+export const iconUrlFromCode = (code) => `http://openweathermap.org/img/wn/${code}@2x.png`
 
 // export default getFormattedWeatherData;
 // export {iconUrlFromCode, formatToLocalTime};

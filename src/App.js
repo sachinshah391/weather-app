@@ -43,8 +43,6 @@ function App() {
         setWeather(data);
       })
       //setWeather(data));
-      
-      console.log(data);
     }
     fetchWeather();
   }, [query, units])
@@ -69,7 +67,7 @@ function App() {
         {weather &&
           <div>
             <TimeAndLocation weather={weather} />
-            <TemperatureAndDetails weather={weather} />
+            <TemperatureAndDetails weather={weather} units={units} setUnits={setUnits} />
             {/* <Forecast title="hourly forecast" items={weather.hourly} />
             <Forecast title="daily forecast" items={weather.daily}/> */}
           </div>
